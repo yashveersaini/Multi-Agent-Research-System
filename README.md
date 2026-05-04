@@ -1,4 +1,4 @@
-# 🚀 MultiAgenIQ - Multi-Agent Research System 
+# 🚀 MultiAgentIQ - Multi-Agent Research System 
 
 * Intelligent multi-agent system for automated research using web scraping and search tools
 
