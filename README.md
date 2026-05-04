@@ -1,104 +1,70 @@
-# 🚀 MultiAgentIQ -- AI-Based Multi-Agent Research System
+# 🚀 Multi-Agent Research System using LCEL & Runnables
 
-## 📌 Brief One Line Summary
-
-An AI-powered multi-agent system that performs intelligent web research,
-extracts structured insights, and automates information gathering using
-LLM-driven agents and tools.
+* Intelligent multi-agent system for automated research using web scraping and search tools
 
 ------------------------------------------------------------------------
-
 ## 📖 Overview
 
-MultiAgentIQ is a full-fledged AI research system built using a
-multi-agent architecture. It leverages Large Language Models (LLMs),
-tool-based reasoning, and LCEL (LangChain Expression Language) pipelines
-to perform deep web research and data extraction.
-
-The system consists of specialized agents that collaborate with tools
-like Tavily (for intelligent search) and BeautifulSoup (for web
-scraping), orchestrated through a central React-style agent. This
-enables automated, scalable, and context-aware research workflows.
+This project is a full-fledged **multi-agent research system** designed to automate information gathering and processing. It integrates multiple tools and agents to perform intelligent research tasks. The system leverages advanced pipelines using **LCEL (LangChain Expression Language)** and **Runnables** instead of traditional chains, enabling more flexible and scalable workflows.
 
 ------------------------------------------------------------------------
-
 ## ❗ Problem Statement
 
-Traditional search systems provide raw links but lack structured
-insights and automation. Manual research is time-consuming and
-inefficient.
+Traditional research workflows are time-consuming and require manual effort to gather, process, and analyze information from multiple sources. There is a need for an automated system that can:
 
-This project solves: - Inefficient manual web research\
-- Lack of structured and summarized insights\
-- Difficulty in extracting relevant data from multiple sources\
-- No coordination between search and data extraction
+* Efficiently search and extract relevant data
+* Coordinate multiple agents for complex tasks
+* Provide structured and meaningful outputs
 
 ------------------------------------------------------------------------
-
-## 🧠 System Architecture
-
-### 🔹 Multi-Agent Design
-
--   **Research Agent**
-    -   Uses Tavily API for intelligent search\
-    -   Retrieves relevant URLs and summaries
--   **Scraper Agent**
-    -   Uses BeautifulSoup for web scraping\
-    -   Extracts clean and structured content
--   **Controller (React Agent)**
-    -   Coordinates between agents\
-    -   Decides which tool/agent to use\
-    -   Handles reasoning and workflow execution
--   **LCEL Pipeline (Runnables)**
-    -   Chains agents and tools efficiently\
-    -   Enables modular and scalable execution
-
-------------------------------------------------------------------------
-
 ## 🛠 Tools and Technologies
 
--   **Backend:** Python\
--   **LLM / AI:** LangChain, Gemini API (Google GenAI)\
--   **Agents:** React Agent (LangChain)\
--   **Search Tool:** Tavily API\
--   **Web Scraping:** BeautifulSoup, Requests\
--   **Pipeline:** LCEL (LangChain Runnables)\
--   **Environment Management:** python-dotenv\
--   **Async / Networking:** httpx, aiohttp\
--   **Debugging:** Rich
+* **Tavily API** – For intelligent web search
+* **BeautifulSoup** – For web scraping and data extraction
+* **Gemini API** – For building intelligent agents
+* **LangChain (LCEL & Runnables)** – For pipeline orchestration
+* **Python** – Core programming language
 
 ------------------------------------------------------------------------
+## ⚙️ Methodology
 
-## ⚙️ Methods
+1. **Tool Integration**
 
--   Multi-agent orchestration using LangChain\
--   Tool-based reasoning with Tavily and BeautifulSoup\
--   Web search using Tavily API (semantic search)\
--   HTML parsing and content extraction using BeautifulSoup\
--   LCEL pipelines for chaining agents and tools\
--   Prompt-driven reasoning using Gemini LLM\
--   Modular tool design using `@tool` decorator
+   * Tavily is used for fetching relevant search results
+   * BeautifulSoup extracts structured data from web pages
+
+2. **Agent Creation**
+
+   * Two intelligent agents are built using the Gemini API
+   * Each agent is connected to both tools for enhanced capability
+
+3. **Pipeline Design**
+
+   * Instead of traditional chains, LCEL pipelines with Runnables are used
+   * `create_agent` is utilized to define agent behavior and workflow
+
+4. **Execution Flow**
+
+   * User query → Agents process → Tools fetch & extract data → Results combined → Final output generated
 
 ------------------------------------------------------------------------
-
 ## 💡 Key Insights
 
--   Separates **search and extraction responsibilities** using agents\
--   Enables **autonomous research workflows**\
--   Produces **structured and summarized outputs instead of raw links**\
--   Highly **scalable and modular architecture**\
--   Demonstrates real-world **agent collaboration**
+* LCEL pipelines provide more flexibility than traditional chains
+* Multi-agent architecture improves task specialization and efficiency
+* Combining search + scraping significantly enhances research accuracy
+* Runnables make the system modular and scalable
 
 ------------------------------------------------------------------------
+## 📊 Dashboard / Model / Output
 
-## 📊 Output / Workflow
-
--   **User Query Input**\
--   **Research Agent Execution**\
--   **Scraper Agent Execution**\
--   **Final AI Response**
+* Structured research outputs generated by agents
+* Processed and summarized information from multiple sources
+* Modular pipeline execution logs (if implemented)
 
 ------------------------------------------------------------------------
+## ▶️ How to Run this Project on Local system?
+
 
 ## ▶️ How to Run this Project on Local System?
 
@@ -134,21 +100,18 @@ python main.py
 ```
 
 ------------------------------------------------------------------------
-
 ## 📈 Results & Conclusion
 
--   Built a multi-agent research pipeline\
--   Automated search + scraping + summarization\
--   Improved efficiency of information retrieval
+The system successfully demonstrates how multiple agents can collaborate with tools to perform automated research tasks. By using LCEL and Runnables, the project achieves better modularity, scalability, and control over execution flow compared to traditional approaches.
 
 ------------------------------------------------------------------------
-
 ## 🔮 Future Work
 
--   Add memory systems\
--   Implement vector databases (RAG)\
--   Build frontend UI\
--   Deploy to cloud
+* Add more specialized agents for domain-specific research
+* Integrate vector databases for memory and retrieval
+* Build a frontend dashboard for visualization
+* Improve agent collaboration and decision-making logic
+* Add real-time streaming responses
 
 ------------------------------------------------------------------------
 
