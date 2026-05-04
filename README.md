@@ -1,4 +1,4 @@
-# 🚀 Multi-Agent Research System using LCEL & Runnables
+# 🚀 MultiAgenIQ - Multi-Agent Research System 
 
 * Intelligent multi-agent system for automated research using web scraping and search tools
 
