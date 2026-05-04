@@ -28,10 +28,27 @@ def web_search(query: str) -> dict:
 
 
 @tool
-def scrape_url(url: str) ->str:
+def scrape_url(url: str) -> str:
     """Scrape and return clean text content from a given URL for deeper reading."""
     try:
-        resp = requests.get(url, timeout=8, headers={"User-Agent": "Mozilla/5/0"})
+        headers = {
+            "User-Agent": "Mozilla/5.0"
+        }
+        resp = requests.get(url, timeout=8, headers=headers)
+        
+        if resp.status_code != 200:
+            return f"Failed to fetch page, status code: {resp.status_code}"
+
         soup = BeautifulSoup(resp.text, "html.parser")
+
+        # safer version
         for tag in soup(["script", "style", "nav", "footer"]):
-            tag.doc
+            tag.decompose()
+
+        text = soup.get_text(separator=" ", strip=True)
+
+        return text[:3000] if text else "No readable content found."
+
+    except Exception as e:
+        return f"Could not scrape URL: {str(e)}"
+    
