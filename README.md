@@ -65,9 +65,6 @@ Traditional research workflows are time-consuming and require manual effort to g
 ------------------------------------------------------------------------
 ## ▶️ How to Run this Project on Local system?
 
-
-## ▶️ How to Run this Project on Local System?
-
 ### 1. Clone the repository
 
 ``` bash
