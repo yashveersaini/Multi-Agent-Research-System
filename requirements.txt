@@ -39,3 +39,6 @@ rich>=13.7.0
 
 # Jupyter (optional for dev/testing)
 ipython>=8.25.0
+
+fastapi>=0.136
+uvicorn>=0.46

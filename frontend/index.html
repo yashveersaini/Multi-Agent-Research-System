@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResearchAI — Multi-Agent Research Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">◆</span>
+      <span class="brand-name">ResearchAI</span>
+    </div>
+    <div class="topbar-sub">Multi-Agent Research Assistant</div>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- ================= HERO / INPUT ================= -->
+  <section class="hero">
+    <h1>Research anything. Get a written report.</h1>
+    <p class="hero-sub">Enter a topic — a search agent, a reader agent, a writer, and a critic will work together and show you their progress live.</p>
+
+    <form id="researchForm" class="search-form" autocomplete="off">
+      <input
+        type="text"
+        id="topicInput"
+        placeholder="e.g. Impact of quantum computing on cryptography"
+        required
+      >
+      <button type="submit" id="startBtn">
+        <span id="startBtnLabel">Start Research</span>
+        <span id="startBtnSpinner" class="spinner d-none"></span>
+      </button>
+    </form>
+  </section>
+
+  <!-- ================= PROGRESS ================= -->
+  <section id="progressSection" class="progress-section d-none">
+    <div class="step-tracker">
+      <div class="step" data-step="search">
+        <div class="step-icon">🔍</div>
+        <div class="step-label">Searching</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="read">
+        <div class="step-icon">📄</div>
+        <div class="step-label">Reading</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="write">
+        <div class="step-icon">✍️</div>
+        <div class="step-label">Writing</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="critic">
+        <div class="step-icon">🧠</div>
+        <div class="step-label">Reviewing</div>
+      </div>
+    </div>
+    <div id="statusMessage" class="status-message"></div>
+  </section>
+
+  <!-- ================= ERROR BANNER ================= -->
+  <div id="errorBanner" class="error-banner d-none"></div>
+
+  <!-- ================= RESULTS ================= -->
+  <section id="resultsSection" class="results-section d-none">
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="report">📝 Report</button>
+      <button class="tab-btn" data-tab="feedback">🧠 Critic Feedback</button>
+      <button class="tab-btn" data-tab="sources">📄 Sources</button>
+      <button class="tab-btn" data-tab="search">🔍 Raw Search</button>
+    </div>
+
+    <div class="tab-panels">
+
+      <!-- REPORT: rendered as readable article, not raw markdown -->
+      <div class="tab-panel active" id="panel-report">
+        <div class="panel-toolbar">
+          <button id="downloadMdBtn" class="btn-ghost">⬇ Download .md</button>
+          <button id="downloadPdfBtn" class="btn-ghost">⬇ Download PDF</button>
+          <button id="copyReportBtn" class="btn-ghost">📋 Copy</button>
+        </div>
+        <article id="reportArticle" class="report-article"></article>
+      </div>
+
+      <div class="tab-panel" id="panel-feedback">
+        <article id="feedbackArticle" class="report-article"></article>
+      </div>
+
+      <div class="tab-panel" id="panel-sources">
+        <pre id="scrapedContent" class="raw-block"></pre>
+      </div>
+
+      <div class="tab-panel" id="panel-search">
+        <pre id="searchResults" class="raw-block"></pre>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="page-footer">
+  Develop by - Yashveer Saini
+</footer>
+
+<!-- Markdown rendering (client-side only) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<!-- PDF export (client-side only) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
